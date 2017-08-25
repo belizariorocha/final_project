@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170810230637) do
+ActiveRecord::Schema.define(version: 20170820160858) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -41,6 +41,92 @@ ActiveRecord::Schema.define(version: 20170810230637) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "departments", force: :cascade do |t|
+    t.string "name"
+    t.integer "code"
+    t.integer "executive_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "label"
+  end
+
+  create_table "emergency_events", force: :cascade do |t|
+    t.date "date"
+    t.integer "emergency_type_id"
+    t.text "details"
+    t.integer "office_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "emergency_types", force: :cascade do |t|
+    t.string "name"
+    t.text "details"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "emergency_wardens", force: :cascade do |t|
+    t.string "role"
+    t.integer "office_id"
+    t.integer "staff_member_id"
+    t.string "acknowledged"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.string "name"
+    t.text "details"
+    t.float "fte_utilization"
+    t.integer "staff_member_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "occupancies", force: :cascade do |t|
+    t.integer "organization_id"
+    t.integer "office_id"
+    t.integer "staff_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "offices", force: :cascade do |t|
+    t.string "name"
+    t.string "city"
+    t.string "state"
+    t.text "address"
+    t.date "lease_expiry"
+    t.float "size"
+    t.float "annual_cost"
+    t.integer "department_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "occ_rate"
+  end
+
+  create_table "organizations", force: :cascade do |t|
+    t.text "name"
+    t.text "details"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "staff_members", force: :cascade do |t|
+    t.text "name"
+    t.text "email"
+    t.string "telephone"
+    t.string "photo"
+    t.text "em_contact_name"
+    t.text "em_contact_email"
+    t.string "em_contact_telephone"
+    t.integer "organization_id"
+    t.integer "office_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

@@ -1,0 +1,109 @@
+<!-- Validation failure messages -->
+<% if @staff_member.errors.any? %>
+  <% @staff_member.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Staff Member #<%= @staff_member.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_staff_member/<%= @staff_member.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <textarea id="name" name="name" placeholder="Name" class="form-control" rows="3"><%= @staff_member.name %></textarea>
+      </div>
+
+      <!-- Label and input for email -->
+      <div class="form-group">
+        <label for="email" class="control-label">
+          Email
+        </label>
+
+        <textarea id="email" name="email" placeholder="Email" class="form-control" rows="3"><%= @staff_member.email %></textarea>
+      </div>
+
+      <!-- Label and input for telephone -->
+      <div class="form-group">
+        <label for="telephone" class="control-label">
+          Telephone
+        </label>
+
+        <input type="text" id="telephone" name="telephone" placeholder="Telephone" class="form-control" value="<%= @staff_member.telephone %>">
+      </div>
+
+      <!-- Label and input for photo -->
+      <div class="form-group">
+        <label for="photo" class="control-label">
+          Photo
+        </label>
+
+        <input type="text" id="photo" name="photo" placeholder="Photo" class="form-control" value="<%= @staff_member.photo %>">
+      </div>
+
+      <!-- Label and input for em_contact_name -->
+      <div class="form-group">
+        <label for="em_contact_name" class="control-label">
+          Em contact name
+        </label>
+
+        <textarea id="em_contact_name" name="em_contact_name" placeholder="Em contact name" class="form-control" rows="3"><%= @staff_member.em_contact_name %></textarea>
+      </div>
+
+      <!-- Label and input for em_contact_email -->
+      <div class="form-group">
+        <label for="em_contact_email" class="control-label">
+          Em contact email
+        </label>
+
+        <textarea id="em_contact_email" name="em_contact_email" placeholder="Em contact email" class="form-control" rows="3"><%= @staff_member.em_contact_email %></textarea>
+      </div>
+
+      <!-- Label and input for em_contact_telephone -->
+      <div class="form-group">
+        <label for="em_contact_telephone" class="control-label">
+          Em contact telephone
+        </label>
+
+        <input type="text" id="em_contact_telephone" name="em_contact_telephone" placeholder="Em contact telephone" class="form-control" value="<%= @staff_member.em_contact_telephone %>">
+      </div>
+
+      <!-- Label and input for organization_id -->
+      <div class="form-group">
+        <label for="organization_id" class="control-label">
+          Organization
+        </label>
+
+        <input type="text" id="organization_id" name="organization_id" placeholder="Organization" class="form-control" value="<%= @staff_member.organization_id %>">
+      </div>
+
+      <!-- Label and input for office_id -->
+      <div class="form-group">
+        <label for="office_id" class="control-label">
+          Office
+        </label>
+
+        <input type="text" id="office_id" name="office_id" placeholder="Office" class="form-control" value="<%= @staff_member.office_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Staff Member
+      </button>
+      or
+      <a href="/staff_members/<%= @staff_member.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

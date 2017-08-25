@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @job.errors.any? %>
+  <% @job.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Job #<%= @job.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_job/<%= @job.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @job.name %>">
+      </div>
+
+      <!-- Label and input for details -->
+      <div class="form-group">
+        <label for="details" class="control-label">
+          Details
+        </label>
+
+        <textarea id="details" name="details" placeholder="Details" class="form-control" rows="3"><%= @job.details %></textarea>
+      </div>
+
+      <!-- Label and input for fte_utilization -->
+      <div class="form-group">
+        <label for="fte_utilization" class="control-label">
+          Fte utilization
+        </label>
+
+        <input type="text" id="fte_utilization" name="fte_utilization" placeholder="Fte utilization" class="form-control" value="<%= @job.fte_utilization %>">
+      </div>
+
+      <!-- Label and input for staff_member_id -->
+      <div class="form-group">
+        <label for="staff_member_id" class="control-label">
+          Staff member
+        </label>
+
+        <input type="text" id="staff_member_id" name="staff_member_id" placeholder="Staff member" class="form-control" value="<%= @job.staff_member_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Job
+      </button>
+      or
+      <a href="/jobs/<%= @job.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

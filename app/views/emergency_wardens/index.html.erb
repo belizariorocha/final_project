@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h1>
+    Emergency wardens
+    <a href="/emergency_wardens/new" class="btn btn-lg btn-success">New Emergency warden</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Role</th>
+        <th>Office</th>
+        <th>Staff member</th>
+        <th>Acknowledged</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @emergency_wardens.each do |emergency_warden| %>
+      <tr>
+        <td><%= emergency_warden.role %></td>
+        <td><%= emergency_warden.office_id %></td>
+        <td><%= emergency_warden.staff_member_id %></td>
+        <td><%= emergency_warden.acknowledged %></td>
+        <td>
+          <a href="/emergency_wardens/<%= emergency_warden.id %>" class="btn btn-primary">Show</a>
+          <a href="/emergency_wardens/<%= emergency_warden.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_emergency_warden/<%= emergency_warden.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

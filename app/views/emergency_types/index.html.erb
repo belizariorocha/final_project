@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>
+    Emergency types
+    <a href="/emergency_types/new" class="btn btn-lg btn-success">New Emergency type</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Name</th>
+        <th>Details</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @emergency_types.each do |emergency_type| %>
+      <tr>
+        <td><%= emergency_type.name %></td>
+        <td><%= emergency_type.details %></td>
+        <td>
+          <a href="/emergency_types/<%= emergency_type.id %>" class="btn btn-primary">Show</a>
+          <a href="/emergency_types/<%= emergency_type.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_emergency_type/<%= emergency_type.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

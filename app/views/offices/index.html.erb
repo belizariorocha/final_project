@@ -1,0 +1,191 @@
+<div class="page-header">
+  <h1>
+    Offices Sizing Tool
+  </h1>
+</div>
+
+<div class="row">
+  <!--Parameters panel-->
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Parameters</h3>
+      </div>
+      <div class="panel-body">
+      <form action="/offices" method="get">
+        <div class="col-md-6 form-group">
+          <label for="occ_rate" class="control-label">Target ocupancy rate</label>
+          <input type="number" id="occ_rate" name="occ_rate" value="<%= number_with_precision(@target_occ_rate, precision:0 )%>" placeholder="eg: 180 RSF / person" class="form-control" min="50" max="1000">
+         </div>
+         <div class="col-md-6 form-group">
+          <label for="time_horizon" class="control-label">Time Horizon (in years)</label>
+          <input type="number" id="time_horizon" name="time_horizon" value="<%=@time_horizon%>" placeholder="eg: 3" class="form-control" min="1">
+         </div>
+         <div class="col-md-6 form-group">
+           <label for="executive" class="control-label">Filter by Executive</label>
+           <!--The following line is a weak code. Ideally we would define a subset of jobs for executives managing regions-->
+           <%= select_tag("executive", options_for_select(@exec_options, @executive), :class => "form-control") %>
+         </div>
+         <div class="col-md-6 form-group">
+          <label for="inc_partners" class="control-label">Include Partners?</label><br>
+          <%if @inc_partners == "Yes" %>
+            <input type="radio" id="inc_partners" name="inc_partners" value="Yes" checked>Yes
+            <input type="radio" id="inc_partners" name="inc_partners" value="No">No
+          <%elsif @inc_partners == "No"%>
+            <input type="radio" id="inc_partners" name="inc_partners" value="Yes">Yes
+            <input type="radio" id="inc_partners" name="inc_partners" value="No" checked>No
+          <%end%>
+         </div>
+         <div class="col-md-8 ofset-2">
+           <button class="btn">Update paramenters</button>
+         </div>
+      </form>
+      </div>
+    </div>
+  </div>
+  
+  <!--Reduction potential panel-->
+  <div class="col-md-6">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h3 class="panel-title">Potential Space Reduction</h3>
+      </div>
+      <div class="panel-body text-center">
+        <font size=24 color="red"><%= number_to_percentage(@potential*100, precision:1) %></font>
+      </div>
+      <div class="panel-footer">
+        <font size=2 color="gray">
+          # of leases expiring = <%=@leases%>  |  
+          # of offices resized = <%=@offices_to_resize.count%>
+          </font>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <!--Current figures panel-->
+  <div class="col-md-6">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">Current Figures</h3>
+      </div>
+      <div class="panel-body">
+      <font size=3>
+        <div class="col-md-4">
+          <strong>Total Size</strong><br>
+          <p><%=number_with_precision(@total_size, precision:0, delimiter: ',')%></p>
+         </div>
+         <div class="col-md-4">
+          <strong>Occupancy</strong><br>
+          <p><%=number_with_precision(@total_staff_count, precision:0, delimiter: ',')%></p>
+         </div>
+         <div class="col-md-4">
+          <strong>Occupancy Rate</strong><br>
+          <p><%= number_with_precision(@occ_rate, precision:1) %></p>
+         </div>
+      </font>
+      </div>
+    </div>
+  </div>
+  
+  <!--Final panel-->
+  <div class="col-md-6">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">Final</h3>
+      </div>
+      <div class="panel-body">
+      <font size=3>
+        <div class="col-md-4">
+          <strong>Total Size</strong><br>
+          <p><%=number_with_precision(@final_total_size, precision:0, delimiter: ',')%></p>
+         </div>
+         <div class="col-md-4">
+          <strong>Occupancy</strong><br>
+          <p><%=number_with_precision(@final_total_staff_count, precision:0, delimiter: ',')%></p>
+         </div>
+         <div class="col-md-4">
+          <strong>Occupancy Rate</strong><br>
+          <p><%= number_with_precision(@final_occ_rate, precision:1) %></p>
+         </div>
+      </font>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--New office button-->
+<div class="row">
+  <div class="container">
+    <h1>
+      <a href="/offices/new" class="btn btn-lg btn-success">New Office</a>
+      <font size=3 color=gray># of offices = <%=@offices_table.count%></font>
+    </h1>
+  </div>
+</div>
+
+<!--Offices table -->
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Name</th>
+        <!--<th>City</th>-->
+        <!--<th>State</th>-->
+        <!--<th>Address</th>-->
+        <th>Expiry</th>
+        <th>Size (RSF)</th>
+        <th>Staff count</th>
+        <th>Occ. Rate</th>
+        <th>Potential</th>
+        <!--<th>Annual cost</th>-->
+        <th>Regional Executive</th>
+        <!--<th>ID</th>-->
+        <th>Actions</th>
+      </tr>
+
+      <% @offices_table.each do |office| %>
+      <tr>
+        <td><%= office.name %></td>
+        <!--<td><%= office.city %></td>-->
+        <!--<td><%= office.state %></td>-->
+        <!--<td><%= office.address %></td>-->
+        <%unless office.lease_expiry.blank? %>
+          <td><%= office.lease_expiry.strftime("%b/%y") %></td>
+        <%else%>
+          <td> </td>
+        <%end%>
+        <td><%= number_with_precision(office.size, precision: 0, delimiter: ',') %></td>
+        <%occ = @occupancy.where(:office_id => office.id).sum(:staff_count).to_f %>
+        <td><%= number_with_precision(occ, precision: 0, delimiter: ',') %></td>
+        <%occ_rate = office.size.to_f / occ %>
+        <td><%= number_with_precision(occ_rate, precision: 0) %></td>
+        <%unless office.lease_expiry.blank? %>
+          <%if office.lease_expiry < @cutoff_date %>
+            <%if (occ_rate > @target_occ_rate) %>
+              <td><%=number_to_percentage((1 - @target_occ_rate/occ_rate)*100, precision: 0)%></td>
+            <%else%>
+              <td> n.a. </td>
+            <%end%>
+          <%else%>
+            <td> n.a. </td>
+          <%end%>
+        <%else%>
+          <td> n.a. </td>  
+        <%end%>
+        
+        <!--<td><%= office.annual_cost %></td>-->
+        
+        <td><%= office.department.executive.staff_member.name %></td>
+        <!--<td><%= office.id %></td>-->
+        <td>
+          <a href="/offices/<%= office.id %>" class="btn btn-primary">Show</a>
+          <a href="/offices/<%= office.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_office/<%= office.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

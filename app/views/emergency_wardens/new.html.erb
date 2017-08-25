@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @emergency_warden.errors.any? %>
+  <% @emergency_warden.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Emergency Warden</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_emergency_warden" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for role -->
+      <div class="form-group">
+        <label for="role" class="control-label">
+          Role
+        </label>
+
+        <input type="text" id="role" name="role" placeholder="Role" class="form-control" value="<%= @emergency_warden.role %>">
+      </div>
+
+      <!-- Label and input for office_id -->
+      <div class="form-group">
+        <label for="office_id" class="control-label">
+          Office
+        </label>
+
+        <input type="text" id="office_id" name="office_id" placeholder="Office" class="form-control" value="<%= @emergency_warden.office_id %>">
+      </div>
+
+      <!-- Label and input for staff_member_id -->
+      <div class="form-group">
+        <label for="staff_member_id" class="control-label">
+          Staff member
+        </label>
+
+        <input type="text" id="staff_member_id" name="staff_member_id" placeholder="Staff member" class="form-control" value="<%= @emergency_warden.staff_member_id %>">
+      </div>
+
+      <!-- Label and input for acknowledged -->
+      <div class="form-group">
+        <label for="acknowledged" class="control-label">
+          Acknowledged
+        </label>
+
+        <input type="text" id="acknowledged" name="acknowledged" placeholder="Acknowledged" class="form-control" value="<%= @emergency_warden.acknowledged %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Emergency Warden
+      </button>
+      or
+      <a href="/emergency_wardens">Cancel</a>
+    </form>
+  </div>
+</div>

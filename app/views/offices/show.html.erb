@@ -1,0 +1,46 @@
+<div class="page-header">
+  <h3><%= @office.name %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Name</dt>
+      <dd><%= @office.name %></dd>
+
+      <dt>City</dt>
+      <dd><%= @office.city %></dd>
+
+      <dt>State</dt>
+      <dd><%= @office.state %></dd>
+
+      <dt>Address</dt>
+      <dd><%= @office.address %></dd>
+
+      <dt>Lease expiry</dt>
+      <dd><%= @office.lease_expiry %></dd>
+
+      <dt>Size</dt>
+      <dd><%= number_with_precision(@office.size, precision: 0, delimiter: ',') %></dd>
+
+      <dt>Annual cost</dt>
+      <dd><%= number_with_precision(@office.annual_cost, precision: 0, delimiter: ',') %></dd>
+
+      <dt>Department</dt>
+      <dd><%= @office.department.code %>-<%= @office.department.name %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/offices" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/offices/<%= @office.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_office/<%= @office.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

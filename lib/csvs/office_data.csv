@@ -1,0 +1,74 @@
+Office,Dept,Expiry,Capacity,Occupancy TFA,Occupancy Partner,Size,City,State,Dept_name,Dept_ID,ID,Expiry_2,Expiry_3
+"New York, NY",423,31/01/2032,588,297,97,129828,New York, NY,New York,98,2,1/31/2032,48244
+"Chicago, IL",405,31/05/2023,123,86,,19856,Chicago, IL,Chicago-Northwest Indiana,80,3,5/31/2023,45077
+"Los Angeles, CA",417,20/08/2018,79,61,8,11865,Los Angeles, CA,Los Angeles,92,4,8/20/2018,43332
+"Washington, D.C.",410,31/10/2024,153,68,-,35290,Washington, D.C.,D.C. Region,85,5,10/31/2024,45596
+"Dallas, TX",406,28/02/2018,61,59,6,11056,Dallas, TX,Dallas-Fort Worth,81,6,2/28/2018,43159
+"San Francisco, CA",403,30/11/2022,125,53,11,25644,San Francisco, CA,Bay Area,78,7,11/30/2022,44895
+"Houston, TX",413,31/03/2022,67,43,9,16255,Houston, TX,Houston,88,8,3/31/2022,44651
+"Atlanta, GA",400,30/11/2019,85,46,-,19469,Atlanta, GA,Metro Atlanta,75,9,11/30/2019,43799
+"Boston, MA",404,30/04/2021,36,41,-,14020,Boston, MA,Massachusetts,79,10,4/30/2021,44316
+"Durham, NC",437,31/12/2018,38,40,1,4509,Durham, NC,Eastern North Carolina,111,11,12/31/2018,43465
+"Memphis, TN",434,30/04/2017,62,38,1,12529,Memphis, TN,Memphis,108,12,4/30/2017,42855
+"Baltimore, MD",402,2/1/2019,53,36,1,8149,Baltimore, MD,Baltimore,77,13,1/2/2019,43467
+"Denver, CO",409,31/05/2022,49,32,2,10311,Denver, CO,Colorado,84,14,5/31/2022,44712
+"Phoenix, AZ",427,30/04/2017,68,25,9,13562,Phoenix, AZ,Phoenix,101,15,4/30/2017,42855
+"Philadelphia, PA",424,31/03/2021,57,29,1,14210,Philadelphia, PA,Greater Philadelphia,99,16,3/31/2021,44286
+"Charlotte, NC",438,30/09/2020,36,29,-,7721,Charlotte, NC,Charlotte,112,17,9/30/2020,44104
+"New Haven, CT",407,31/07/2018,49,28,1,11317,New Haven, CT,Connecticut,82,18,7/31/2018,43312
+"Las Vegas, NV",416,24/08/2019,34,26,-,5396,Las Vegas, NV,Las Vegas Valley,91,19,8/24/2019,43701
+"Miami, FL",419,30/06/2017,31,25,-,9460,Miami, FL,Miami-Dade,94,20,6/30/2017,42916
+"Milwaukee, WI",418,28/02/2018,27,25,-,5704,Milwaukee, WI,Milwaukee,93,21,2/28/2018,43159
+"New Orleans, LA",411,31/03/2018,47,23,2,10501,New Orleans, LA,Greater New Orleans - Louisiana Delta,86,22,3/31/2018,43190
+"Tulsa, OK",433,30/06/2018,35,24,-,7157,Tulsa, OK,Greater Tulsa,107,23,6/30/2018,43281
+"Cleveland, OH",446,31/08/2018,24,23,-,5381,Cleveland, OH,Northeast Ohio - Cleveland,120,24,8/31/2018,43343
+"Indianapolis, IN",412,28/02/2020,32,22,1,9400,Indianapolis, IN,Indianapolis,87,25,2/28/2020,43889
+"Nashville, TN",421,31/08/2017,38,23,-,7465,Nashville, TN,Greater Nashville,96,26,8/31/2017,42978
+"Oxford, MS",435,31/08/2018,12,23,-,2300,Oxford, MS,Mississippi,109,27,8/31/2018,43343
+"Newark, NJ",422,14/12/2018,31,20,-,9080,Newark, NJ,New Jersey,97,28,12/14/2018,43448
+"St. Louis, MO",431,31/03/2018,33,20,-,6500,St. Louis, MO,St. Louis,105,29,3/31/2018,43190
+"San Antonio, TX",430,31/12/2019,33,18,1,10036,San Antonio, TX,San Antonio,104,30,12/31/2019,43830
+"Kansas City, MO",415,30/04/2018,22,18,-,5655,Kansas City, MO,Kansas City,90,31,4/30/2018,43220
+"Charleston, SC",443,31/08/2019,19,17,-,4821,Charleston, SC,South Carolina,117,32,8/31/2019,43708
+"Oklahoma City, OK",454,2/5/2019,30,17,-,5037,Oklahoma City, OK,Oklahoma City,127,33,5/2/2019,43587
+"Detroit, MI",408,28/02/2018,22,15,-,11305,Detroit, MI,Detroit,83,34,2/28/2018,43159
+"Honolulu, HI",432,14/06/2019,21,14,-,4226,Honolulu, HI,Hawai'i,106,35,6/14/2019,43630
+"San Diego, CA",447,31/10/2018,10,14,-,1628,San Diego, CA,San Diego,121,36,10/31/2018,43404
+"Jacksonville, FL",414,2/4/2020,26,13,-,5394,Jacksonville, FL,Jacksonville,89,37,4/2/2020,43923
+"Sacramento, CA",428,30/04/2021,20,13,-,3717,Sacramento, CA,California Capital Valley,102,38,4/30/2021,44316
+"Cincinnati, OH",445,22/07/2019,20,12,-,3759,Cincinnati, OH,Southwest Ohio,119,39,7/22/2019,43668
+"Birmingham, AL",401,30/11/2018,12,11,-,1744,Birmingham, AL,Alabama,76,40,11/30/2018,43434
+"Minneapolis, MN",420,30/04/2019,35,11,-,8449,Minneapolis, MN,Twin Cities,95,41,4/30/2019,43585
+"Mission, TX",440,30/09/2017,10,11,-,580,Mission, TX,Rio Grande Valley,114,42,9/30/2017,43008
+"Seattle, WA",429,28/02/2018,17,11,-,2300,Seattle, WA,Washington,103,43,2/28/2018,43159
+"Florence, SC",443,8/7/2018,12,10,-,2980,Florence, SC,South Carolina,117,32,7/8/2018,43289
+"Gallup, NM",436,30/11/2018,9,10,-,2154,Gallup, NM,New Mexico,110,45,11/30/2018,43434
+"Jackson, MS",435,30/06/2021,13,10,-,2325,Jackson, MS,Mississippi,109,27,6/30/2021,44377
+"Baton Rouge, LA",442,31/01/2019,24,8,1,4461,Baton Rouge, LA,South Louisiana,116,47,1/31/2019,43496
+"Oakland, CA",403,31/08/2017,12,9,-,3284,Oakland, CA,Bay Area,78,7,8/31/2017,42978
+"Richmond, CA",403,30/09/2018,11,9,-,2675,Richmond, CA,Bay Area,78,7,9/30/2018,43373
+"Greensboro, NC",450,30/06/2018,13,8,-,2041,Greensboro, NC,North Carolina Piedmont Triad,124,50,6/30/2018,43281
+"Helena, AR",449,n/a,9,8,-,4192,Helena, AR,Arkansas,123,51,n/a,n/a
+"Mission, SD",441,30/09/2017,6,7,1,1000,Mission, SD,South Dakota,115,52,9/30/2017,43008
+"Orlando, FL",453,30/11/2017,7,8,-,1000,Orlando, FL,Orlando,126,53,11/30/2017,43069
+"Providence, RI",439,30/04/2019,10,8,-,3100,Providence, RI,Rhode Island,113,54,4/30/2019,43585
+"Buffalo, NY",448,31/05/2017,10,7,-,1200,Buffalo, NY,Buffalo,122,55,5/31/2017,42886
+"Cleveland, MS",435,MTM,5,7,-,1000,Cleveland, MS,Mississippi,109,27,MTM,MTM
+"San Jose, CA",403,7/3/2017,14,7,-,3350,San Jose, CA,Bay Area,78,7,3/7/2017,42801
+"Wilmington, DE",426,30/11/2018,9,7,-,1000,Wilmington, DE,Delaware,100,58,11/30/2018,43434
+"Nampa, ID",452,31/10/2017,3,6,-,992,Nampa, ID,Idaho,125,59,10/31/2017,43039
+"Kailua-Kona, HI",432,31/12/2018,7,5,-,1078,Kailua-Kona, HI,Hawai'i,106,35,12/31/2018,43465
+"Farmington, NM",436,TBD,4,4,-,1000,Farmington, NM,New Mexico,110,45,TBD,TBD
+"Little Rock, AR",449,31/01/2017,5,4,-,750,Little Rock, AR,Arkansas,123,51,1/31/2017,42766
+"Springfield, MA",404,14/06/2017,3,4,-,938,Springfield, MA,Massachusetts,79,10,6/14/2017,42900
+"Weldon, NC",437,TBD,4,4,-,1000,Weldon, NC,Eastern North Carolina,111,11,TBD,TBD
+"Greenville, MS",435,31/05/2018,3,3,-,1500,Greenville, MS,Mississippi,109,27,5/31/2018,43251
+"Tallulah, LA",411,1/10/2017,3,3,-,1400,Tallulah, LA,Greater New Orleans - Louisiana Delta,86,22,10/1/2017,43009
+"Colorado Springs, CO",409,MTM,14,2,-,1000,Colorado Springs, CO,Colorado,84,14,MTM,MTM
+"Fall River, MA",404,14/04/2017,2,2,-,874,Fall River, MA,Massachusetts,79,10,4/14/2017,42839
+"Fort Worth, TX",406,1/8/2017,6,2,-,2500,Fort Worth, TX,Dallas-Fort Worth,81,6,8/1/2017,42948
+"Hammond, IN",405,28/02/2017,2,2,-,1000,Hammond, IN,Chicago-Northwest Indiana,80,3,2/28/2017,42794
+"Marion, AL",401,31/10/2017,2,2,-,2118,Marion, AL,Alabama,76,40,10/31/2017,43039
+"Camden, NJ",422,31/01/2018,1,1,-,1791,Camden, NJ,New Jersey,97,28,1/31/2018,43131
+"Hazard, KY",444,30/06/2018,5,1,-,2200,Hazard, KY,Appalachia,118,73,6/30/2018,43281
+"Pueblo, CO",409,31/07/2017,2,1,-,700,Pueblo, CO,Colorado,84,14,7/31/2017,42947

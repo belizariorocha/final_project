@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @emergency_event.errors.any? %>
+  <% @emergency_event.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Emergency Event #<%= @emergency_event.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_emergency_event/<%= @emergency_event.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for date -->
+      <div class="form-group">
+        <label for="date" class="control-label">
+          Date
+        </label>
+
+        <input type="text" id="date" name="date" placeholder="Date" class="form-control" value="<%= @emergency_event.date %>">
+      </div>
+
+      <!-- Label and input for emergency_type_id -->
+      <div class="form-group">
+        <label for="emergency_type_id" class="control-label">
+          Emergency type
+        </label>
+
+        <input type="text" id="emergency_type_id" name="emergency_type_id" placeholder="Emergency type" class="form-control" value="<%= @emergency_event.emergency_type_id %>">
+      </div>
+
+      <!-- Label and input for details -->
+      <div class="form-group">
+        <label for="details" class="control-label">
+          Details
+        </label>
+
+        <textarea id="details" name="details" placeholder="Details" class="form-control" rows="3"><%= @emergency_event.details %></textarea>
+      </div>
+
+      <!-- Label and input for office_id -->
+      <div class="form-group">
+        <label for="office_id" class="control-label">
+          Office
+        </label>
+
+        <input type="text" id="office_id" name="office_id" placeholder="Office" class="form-control" value="<%= @emergency_event.office_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Emergency Event
+      </button>
+      or
+      <a href="/emergency_events/<%= @emergency_event.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

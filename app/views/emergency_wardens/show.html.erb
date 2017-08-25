@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h3>Emergency Warden #<%= @emergency_warden.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Role</dt>
+      <dd><%= @emergency_warden.role %></dd>
+
+      <dt>Office</dt>
+      <dd><%= @emergency_warden.office_id %></dd>
+
+      <dt>Staff member</dt>
+      <dd><%= @emergency_warden.staff_member_id %></dd>
+
+      <dt>Acknowledged</dt>
+      <dd><%= @emergency_warden.acknowledged %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/emergency_wardens" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/emergency_wardens/<%= @emergency_warden.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_emergency_warden/<%= @emergency_warden.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

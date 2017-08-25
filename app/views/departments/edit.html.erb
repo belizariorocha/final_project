@@ -1,0 +1,55 @@
+<!-- Validation failure messages -->
+<% if @department.errors.any? %>
+  <% @department.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Department #<%= @department.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_department/<%= @department.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @department.name %>">
+      </div>
+
+      <!-- Label and input for code -->
+      <div class="form-group">
+        <label for="code" class="control-label">
+          Code
+        </label>
+
+        <input type="text" id="code" name="code" placeholder="Code" class="form-control" value="<%= @department.code %>">
+      </div>
+
+      <!-- Label and input for executive_id -->
+      <div class="form-group">
+        <label for="executive_id" class="control-label">
+          Executive
+        </label>
+
+        <input type="text" id="executive_id" name="executive_id" placeholder="Executive" class="form-control" value="<%= @department.executive_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Department
+      </button>
+      or
+      <a href="/departments/<%= @department.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

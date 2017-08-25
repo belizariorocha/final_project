@@ -1,0 +1,117 @@
+<!-- Validation failure messages -->
+<% if @office.errors.any? %>
+  <% @office.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Office</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_office/<%= @office.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @office.name %>">
+      </div>
+
+      <!-- Label and input for city -->
+      <div class="form-group">
+        <label for="city" class="control-label">
+          City
+        </label>
+
+        <input type="text" id="city" name="city" placeholder="City" class="form-control" value="<%= @office.city %>">
+      </div>
+
+      <!-- Label and input for state -->
+      <div class="form-group">
+        <label for="state" class="control-label">
+          State
+        </label>
+
+        <input type="text" id="state" name="state" placeholder="State" class="form-control" value="<%= @office.state %>">
+      </div>
+
+      <!-- Label and input for address -->
+      <div class="form-group">
+        <label for="address" class="control-label">
+          Address
+        </label>
+
+        <textarea id="address" name="address" placeholder="Address" class="form-control" rows="3"><%= @office.address %></textarea>
+      </div>
+
+      <!-- Label and input for lease_expiry -->
+
+      <label for="lease_expiry" class="control-label">Lease expiry</label>
+      <div class='input-group date' id='datetimepicker1'>
+        <input type='text' class="form-control" name="lease_expiry" id="lease_expiry" placeholder="eg: yyyy-mm-dd" value="<%= @office.lease_expiry %>">
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+      </div>
+
+      <!-- Label and input for size -->
+      <div class="form-group">
+        <label for="size" class="control-label">
+          Size
+        </label>
+
+        <input type="text" id="size" name="size" placeholder="Size" class="form-control" value="<%= @office.size %>">
+      </div>
+
+      <!-- Label and input for annual_cost -->
+      <div class="form-group">
+        <label for="annual_cost" class="control-label">
+          Annual cost
+        </label>
+
+        <input type="text" id="annual_cost" name="annual_cost" placeholder="Annual cost" class="form-control" value="<%= @office.annual_cost %>">
+      </div>
+
+      <!-- Label and input for department_id -->
+      <div class="form-group">
+        <label for="department_id" class="control-label">
+          Department
+        </label>
+
+        <%= select_tag("department_id", options_from_collection_for_select(Department.all, :id, :label, selected = @office.department_id), :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-warning">
+        Update Office
+      </button>
+      or
+      <a href="/offices/<%= @office.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
+
+<!--Function to enable datepicker-->
+<script type="text/javascript">
+  $(function () {
+    $('#datetimepicker1').datetimepicker();
+  });
+</script>
+
+<!--Function to pre-populate date-->
+<!--<script>-->
+<!--  $(function () {-->
+<!--    $('#datetimepicker1').datetimepicker({-->
+<!--      defaultDate: "< @office.lease_expiry.strftime("%y/%m/%d") >"-->
+<!--    });-->
+<!--  });-->
+<!--</script>-->
