@@ -13,4 +13,5 @@
 class Occupancy < ApplicationRecord
     belongs_to :office
     belongs_to :organization
+    
 end

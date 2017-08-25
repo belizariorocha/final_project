@@ -12,4 +12,6 @@
 class Organization < ApplicationRecord
     has_many :occupancies, :dependent => :destroy
     has_many :staff_members, :dependent => :nullify
+    
+    
 end
